@@ -34,12 +34,30 @@ $ npm test
 ```
 
 ## Using the endpoint
-
-POST:  `http://localhost:8000/users`
-
+POST `http://localhost:8000/users`
+### Happy path
 ```
 {
   "username": "admin2", 
   "password": "admin2"
 }
 ```
+![Alt text](image-1.png)
+
+### User not found
+```
+{
+  "username": "whatever", 
+  "password": "admin2"
+}
+```
+![Alt text](image-2.png)
+
+### Incorrect password
+```
+{
+    "username": "admin2", 
+    "password": "whatever"
+}
+```
+![Alt text](image-3.png)
